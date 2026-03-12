@@ -2,276 +2,1338 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Illia Shpak - Technology Leader in DevOps, SRE & Platform Engineering</title>
+  <title>Illia Shpak — Engineering Leader | DevOps · SRE · Platform</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Illia Shpak - Technology Leader specializing in DevOps, SRE, Platform Engineering, and Cloud Computing with over 12 years of experience.">
-  <meta name="keywords" content="DevOps, SRE, Platform Engineering, Cloud Computing, AWS, GCP, Kubernetes, Terraform, Leadership, Automation, Linux, Python, Ruby, CI/CD, Monitoring, Certificates">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <meta name="description" content="Illia Shpak — Director-level engineering leader with 15+ years scaling fintech infrastructure. Multi-cloud architect, regulatory compliance expert, and builder of elite DevOps teams.">
+  <meta name="keywords" content="DevOps, SRE, Platform Engineering, Cloud Architecture, CTO, Engineering Leadership, AWS, GCP, OCI, Kubernetes, Terraform, SAMA, Fintech, Infrastructure">
+  <meta property="og:title" content="Illia Shpak — Engineering Leader">
+  <meta property="og:description" content="Director-level engineering leader scaling fintech infrastructure across MENA. Multi-cloud, regulatory compliance, elite DevOps teams.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Google Analytics -->
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RBW2ESD8EY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-RBW2ESD8EY');
   </script>
 
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #0f0f18;
+      --bg-card: #12121e;
+      --bg-card-hover: #181830;
+      --border: #1e1e3a;
+      --border-bright: #2a2a55;
+      --text-primary: #e8e8f0;
+      --text-secondary: #8888aa;
+      --text-dim: #555570;
+      --accent-cyan: #00d4ff;
+      --accent-green: #00ff88;
+      --accent-purple: #8855ff;
+      --accent-orange: #ff8844;
+      --accent-pink: #ff4488;
+      --glow-cyan: rgba(0, 212, 255, 0.15);
+      --glow-green: rgba(0, 255, 136, 0.1);
+      --glow-purple: rgba(136, 85, 255, 0.1);
+      --grid-color: rgba(30, 30, 58, 0.5);
+      --font-display: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-body: 'Outfit', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── GRID BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── AMBIENT GLOW ORBS ── */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+      animation: orbFloat 20s ease-in-out infinite;
+    }
+    .orb-1 { width: 600px; height: 600px; background: var(--glow-cyan); top: -10%; left: -10%; }
+    .orb-2 { width: 500px; height: 500px; background: var(--glow-purple); bottom: 10%; right: -10%; animation-delay: -7s; }
+    .orb-3 { width: 400px; height: 400px; background: var(--glow-green); top: 50%; left: 40%; animation-delay: -14s; }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -40px) scale(1.05); }
+      66% { transform: translate(-20px, 30px) scale(0.95); }
+    }
+
+    /* ── LAYOUT ── */
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 100px 0;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      background: rgba(10, 10, 15, 0.8);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    nav.scrolled {
+      background: rgba(10, 10, 15, 0.95);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--text-dim); }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent-cyan);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--accent-cyan); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-secondary);
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 64px;
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-green);
+      background: rgba(0, 255, 136, 0.06);
+      border: 1px solid rgba(0, 255, 136, 0.15);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+      width: fit-content;
+      animation: fadeSlideIn 0.8s ease 0.2s both;
+    }
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent-green);
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      animation: fadeSlideIn 0.8s ease 0.4s both;
+    }
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 48px;
+      animation: fadeSlideIn 0.8s ease 0.6s both;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeSlideIn 0.8s ease 0.8s both;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      color: var(--bg-primary);
+      font-weight: 600;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 212, 255, 0.3);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-bright);
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateY(-2px);
+    }
+
+    .hero-metrics {
+      display: flex;
+      gap: 48px;
+      margin-top: 80px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+      animation: fadeSlideIn 0.8s ease 1s both;
+    }
+    .metric {
+      display: flex;
+      flex-direction: column;
+    }
+    .metric-value {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      line-height: 1;
+    }
+    .metric-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 8px;
+    }
+
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTION HEADERS ── */
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--accent-cyan);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .section-desc {
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: 60px;
+      font-size: 1.05rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+    .about-text strong {
+      color: var(--text-primary);
+    }
+    .about-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .highlight-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+    .highlight-card:hover {
+      border-color: var(--accent-cyan);
+      background: var(--bg-card-hover);
+      transform: translateX(4px);
+    }
+    .highlight-card .hc-icon {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .highlight-card .hc-title {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .highlight-card .hc-desc {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    /* ── IMPACT NUMBERS ── */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .impact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    .impact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .impact-card:hover::before { opacity: 1; }
+    .impact-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-bright);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+    .impact-number {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .impact-card:nth-child(1) .impact-number { color: var(--accent-cyan); }
+    .impact-card:nth-child(2) .impact-number { color: var(--accent-green); }
+    .impact-card:nth-child(3) .impact-number { color: var(--accent-purple); }
+    .impact-card:nth-child(4) .impact-number { color: var(--accent-orange); }
+    .impact-desc {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── EXPERIENCE TIMELINE ── */
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple), transparent);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 60px;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -44px;
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      box-shadow: 0 0 12px var(--accent-cyan);
+    }
+    .timeline-item:nth-child(2) .timeline-dot { background: var(--accent-purple); box-shadow: 0 0 12px var(--accent-purple); }
+    .timeline-item:nth-child(3) .timeline-dot { background: var(--accent-green); box-shadow: 0 0 12px var(--accent-green); }
+    .timeline-item:nth-child(4) .timeline-dot { background: var(--accent-orange); box-shadow: 0 0 12px var(--accent-orange); }
+    .timeline-item:nth-child(5) .timeline-dot { background: var(--accent-pink); box-shadow: 0 0 12px var(--accent-pink); }
+
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .timeline-role {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .timeline-company {
+      font-size: 1rem;
+      color: var(--accent-cyan);
+      margin-bottom: 12px;
+    }
+    .timeline-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      max-width: 680px;
+    }
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: rgba(0, 212, 255, 0.06);
+      border: 1px solid rgba(0, 212, 255, 0.12);
+      color: var(--text-secondary);
+    }
+
+    /* ── EXPERTISE ── */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .expertise-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .expertise-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.03), transparent);
+      transition: all 0.4s;
+      pointer-events: none;
+    }
+    .expertise-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-bright);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    }
+    .expertise-card:hover::after { top: -30%; right: -30%; }
+    .ec-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .ec-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .ec-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .ec-tools {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .ec-tools span {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      background: rgba(255,255,255,0.03);
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── CERTIFICATIONS ── */
+    .cert-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .cert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      transition: all 0.3s;
+    }
+    .cert-badge:hover {
+      border-color: var(--accent-cyan);
+      color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+    .cert-badge .cert-icon { font-size: 1rem; }
+
+    /* ── SIDE PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      transition: all 0.4s ease;
+    }
+    .project-card:hover {
+      border-color: var(--accent-green);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+    .project-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent-green);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    .project-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .project-link {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.3s;
+    }
+    .project-link:hover { gap: 12px; }
+
+    /* ── TESTIMONIAL ── */
+    .testimonial-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px;
+      position: relative;
+      max-width: 800px;
+    }
+    .testimonial-block::before {
+      content: '"';
+      font-family: var(--font-display);
+      font-size: 6rem;
+      color: var(--accent-cyan);
+      opacity: 0.15;
+      position: absolute;
+      top: 10px;
+      left: 30px;
+      line-height: 1;
+    }
+    .testimonial-text {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--text-primary);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .testimonial-author {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+    .testimonial-author strong {
+      color: var(--text-secondary);
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      padding: 14px 24px;
+      border-radius: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .contact-link:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      text-align: center;
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+    .footer-text {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    /* ── SCROLL INDICATOR ── */
+    .scroll-indicator {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+      z-index: 200;
+      transition: width 0.1s;
+    }
+
+    /* ── TERMINAL WIDGET ── */
+    .terminal-widget {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 48px;
+      max-width: 600px;
+    }
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.02);
+      border-bottom: 1px solid var(--border);
+    }
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .terminal-dot.red { background: #ff5f57; }
+    .terminal-dot.yellow { background: #febc2e; }
+    .terminal-dot.green { background: #28c840; }
+    .terminal-title {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      margin-left: 8px;
+    }
+    .terminal-body {
+      padding: 20px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      line-height: 2;
+    }
+    .terminal-body .prompt { color: var(--accent-green); }
+    .terminal-body .cmd { color: var(--text-primary); }
+    .terminal-body .output { color: var(--text-dim); }
+    .terminal-body .highlight { color: var(--accent-cyan); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .impact-grid { grid-template-columns: repeat(2, 1fr); }
+      .expertise-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .hero-metrics { flex-wrap: wrap; gap: 32px; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 15, 0.97);
+        backdrop-filter: blur(20px);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--border);
+      }
+      .hamburger { display: flex; }
+      .impact-grid { grid-template-columns: 1fr 1fr; }
+      .hero-metrics { gap: 24px; }
+      .metric-value { font-size: 2rem; }
+      section { padding: 60px 0; }
+      .testimonial-block { padding: 32px 24px; }
+    }
+
+    /* ── TYPING CURSOR ── */
+    .typing-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: var(--accent-cyan);
+      margin-left: 4px;
+      animation: blink 1s steps(1) infinite;
+      vertical-align: text-bottom;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* ── NOISE OVERLAY ── */
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Ambient effects -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="noise"></div>
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+
   <!-- Navigation -->
-  <!-- <nav class="navbar">
-    <a class="navbar-brand" href="#">Illia Shpak</a>
-    <div class="navbar-links">
-      <a class="nav-link" href="#about">About Me</a>
-      <a class="nav-link" href="#skills">Skills</a>
-      <a class="nav-link" href="#certificates">Certificates</a>
-      <a class="nav-link" href="#experience">Experience</a>
-      <a class="nav-link" href="#contact">Contact</a>
+  <nav id="mainNav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">illia<span>@</span>shpak <span class="typing-cursor"></span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#impact">Impact</a>
+        <a href="#experience">Career</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </nav> -->
+  </nav>
 
-  <!-- Main Content -->
-  <div class="container">
-    <!-- Welcome Section -->
-    <div class="welcome-section">
-      <h1>Welcome, I'm <span class="user">Illia Shpak</span><span class="cursor">|</span></h1>
-      <p class="intro">Technology Leader in DevOps, SRE &amp; Platform Engineering | Driving Business Transformation</p>
-    </div>
-    
-    
-    <section id="visitor-info" class="mb-3">
-      <h4>You came from:  <span id="flag"></span> </h4> 
-      <p id="ip-address" class="inline-block"><sub>IP Address: Loading...</p>
-      <p id="location">Location: Loading...</p>
+  <div class="page-wrapper">
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero visible" id="hero">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Open to CTO & VP Engineering opportunities
+      </div>
+      <h1>
+        Building infrastructure<br>
+        that <span class="gradient-text">scales businesses</span>
+      </h1>
+      <p class="hero-subtitle">
+        Director-level engineering leader with 15+ years transforming how fintech companies build, deploy, and scale. From seed stage to Series B — I architect the platforms that power growth.
+      </p>
+      <div class="hero-cta">
+        <a href="https://www.linkedin.com/in/illiash/" target="_blank" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          Connect on LinkedIn
+        </a>
+        <a href="https://github.com/illia-sh" target="_blank" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          GitHub
+        </a>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric">
+          <span class="metric-value" data-count="15">0</span>
+          <span class="metric-label">Years Experience</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value" data-count="200" data-suffix="+">0</span>
+          <span class="metric-label">Technical Interviews</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value" data-prefix="$" data-count="2" data-suffix="B+">0</span>
+          <span class="metric-label">Transactions Processed</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value" data-count="99.99" data-suffix="%" data-decimal="true">0</span>
+          <span class="metric-label">Platform Uptime</span>
+        </div>
+      </div>
     </section>
-    <!-- About Me Section -->
+
+    <!-- ═══════════ ABOUT ═══════════ -->
     <section id="about">
-      <h2>> About Me</h2>
-      <p>
-        A seasoned technology leader with over 12 years of experience specializing in Linux system engineering, DevOps, SRE, and Platform Engineering. Proven expertise in developing and deploying scalable, resilient, and high-availability systems using AWS, GCP, OCI, Kubernetes, and Terraform. Adept at crafting strategic roadmaps aligning technology initiatives with business objectives. Passionate about managing and mentoring high-performing teams, fostering innovation, and driving continuous improvement. Exceptional communicator bridging technical teams and business leaders to deliver solutions that propel growth and operational excellence.
-      </p>
-    </section>
+      <div class="section-label">About Me</div>
+      <div class="section-title">Engineering leader who builds<br>from the ground up</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a hands-on engineering leader who has spent the last 15 years at the intersection of <strong>infrastructure, security, and business growth</strong>. I don't just keep systems running — I build the platforms that let companies move faster, hire better, and scale with confidence.
+          </p>
+          <p>
+            At <strong>Lean Technologies</strong>, I joined at seed stage and scaled infrastructure through a $33M Series A (Sequoia) and $67.5M Series B (General Catalyst), achieving <strong>SAMA fintech licensing</strong> in Saudi Arabia — a pioneering regulatory milestone. Before that, I architected solutions at <strong>JPMorgan Chase</strong> (presented at AWS re:Invent), saved <strong>$500K</strong> at DREST through strategic re-architecture, and reduced costs by <strong>40%</strong> at Burberry.
+          </p>
+          <p>
+            I lead distributed teams across multiple regions, negotiate multi-million dollar cloud contracts, and bridge the gap between engineering execution and executive strategy. Based in <strong>Dubai</strong>, operating globally.
+          </p>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <div class="hc-icon">🏗️</div>
+            <div class="hc-title">Seed → Series B Builder</div>
+            <div class="hc-desc">Scaled infrastructure through two major funding rounds at a regulated MENA fintech</div>
+          </div>
+          <div class="highlight-card">
+            <div class="hc-icon">🔒</div>
+            <div class="hc-title">Regulatory & Compliance</div>
+            <div class="hc-desc">Led SAMA, CBUAE, ISO 27001 certifications across UAE and KSA markets</div>
+          </div>
+          <div class="highlight-card">
+            <div class="hc-icon">🌍</div>
+            <div class="hc-title">Multi-Cloud Architect</div>
+            <div class="hc-desc">Designed hybrid DR strategies spanning AWS, GCP, and OCI across regions</div>
+          </div>
+          <div class="highlight-card">
+            <div class="hc-icon">📈</div>
+            <div class="hc-title">Elite DORA Metrics</div>
+            <div class="hc-desc">Achieved "Elite" status: on-demand deploys, &lt;1hr lead time, minutes MTTR</div>
+          </div>
+        </div>
+      </div>
 
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2>> Technical Skills</h2>
-      <div class="skills-list">
-        <h3>Operating Systems</h3>
-        <ul>
-          <li>Linux Systems Administration (12+ years of hands-on experience): Extensive expertise in managing, configuring, and optimizing Linux environments, including Red Hat, Ubuntu, Debian, CentOS, and other distributions. Skilled in bash scripting, system performance tuning, package management (APT, YUM), and troubleshooting complex infrastructure issues. Proficient with GNU/Linux tools, kernel tuning, and ensuring high availability in production-grade environments.</li>
-        </ul>
-        <h3>Cloud Platforms</h3>
-        <ul>
-          <li>AWS (Certified Solutions Architect)</li>
-          <li>Google Cloud Platform (Certified Professional Cloud Architect)</li>
-          <li>Oracle Cloud Infrastructure (Advanced)</li>
-          <li>RackSpace</li>
-        </ul>
-        <h3>DevOps Tools & Automation</h3>
-        <ul>
-          <li>Infrastructure as Code: Terraform, CloudFormation</li>
-          <li>CI/CD Pipelines: Jenkins, GitLab CI/CD, GitHub Actions, CircleCI, Bitrise, Spinnaker, AWS CodePipeline</li>
-          <li>Configuration Management: Chef, Puppet, Ansible</li>
-          <li>Containerization: Docker, Kubernetes (EKS, GKE, OKE)</li>
-        </ul>
-        <h3>Programming & Scripting</h3>
-        <ul>
-          <li>Python</li>
-          <li>Ruby</li>
-          <li>JavaScript</li>
-          <li>Shell Scripting (Bash)</li>
-        </ul>
-        <h3>Monitoring & Logging</h3>
-        <ul>
-          <li>Monitoring: New Relic, Zabbix, Sensu, Prometheus, Grafana, InfluxDB</li>
-          <li>Logging & Analytics: ELK Stack (Elasticsearch, Logstash, Kibana, APM), Machine Learning with ELK</li>
-          <li>Error Tracking: Sentry, Firebase</li>
-        </ul>
-        <h3>Databases & Messaging</h3>
-        <ul>
-          <li>RDBMS: Oracle, PostgreSQL, MySQL</li>
-          <li>NoSQL: MongoDB, DynamoDB</li>
-          <li>Message Brokers: RabbitMQ, Kafka, ActiveMQ</li>
-        </ul>
-        <h3>APIs</h3>
-        <ul>
-          <li>REST, GraphQL, gRPC</li>
-        </ul>
-        <h3>Methodologies & Best Practices</h3>
-        <ul>
-          <li>Agile & Scrum</li>
-          <li>DevOps & SRE Principles</li>
-          <li>Infrastructure as Code (IaC)</li>
-          <li>Security Compliance (ISO 27001, GDPR, SAMA)</li>
-          <li>Microservices Architecture</li>
-          <li>ITIL, ITSM</li>
-        </ul>
+      <!-- Terminal Widget -->
+      <div class="terminal-widget">
+        <div class="terminal-header">
+          <div class="terminal-dot red"></div>
+          <div class="terminal-dot yellow"></div>
+          <div class="terminal-dot green"></div>
+          <span class="terminal-title">illia@infra ~ %</span>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <div><span class="prompt">$</span> <span class="cmd">whoami</span></div>
+          <div class="output">illia.shpak — Head of DevOps & SRE</div>
+          <div><span class="prompt">$</span> <span class="cmd">cat /etc/career/focus</span></div>
+          <div class="output">infrastructure · security · platform-engineering · leadership</div>
+          <div><span class="prompt">$</span> <span class="cmd">uptime</span></div>
+          <div class="output">15 years, <span class="highlight">zero unplanned career downtime</span></div>
+          <div><span class="prompt">$</span> <span class="cmd">kubectl get pods --namespace=expertise</span></div>
+          <div class="output">aws ✓  gcp ✓  oci ✓  kubernetes ✓  terraform ✓  security ✓</div>
+        </div>
       </div>
     </section>
 
-    <!-- Certificates Section -->
-    <section id="certificates">
-      <h2>> Certifications</h2>
-      <ul>
-        <li>AWS Certified Solutions Architect - Associate</li>
-        <li>Google Cloud Certified - Professional Cloud Architect</li>
-        <li>Chef Certified Developer</li>
-        <li>Elastic Machine Learning Certified</li>
-        <li>Site Reliability Engineering: Measuring and Managing Reliability (Coursera)</li>
-        <li>MongoDB for DBAs</li>
-        <li>Python for Data Science and AI</li>
-        <li>Python Best Practices (Udemy)</li>
-        <li>Building Modern Python Applications on AWS (Coursera)</li>
-        <li>Frontend Web Development with React</li>
-      </ul>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="my-5">
-      <h2><i class="fas fa-briefcase"></i> Experience</h2>
-
-      <div class="job mb-4">
-        <h3>Head of DevOps at Lean Technologies | <span>2022 - Present</span></h3>
-        <ul>
-          <li>Led a team of 15+ engineers to enhance system reliability and scalability.</li>
-          <li>Implemented Kubernetes clusters, reducing deployment times by 50%.</li>
-          <li>Developed CI/CD pipelines, increasing release frequency by 30%.</li>
-          <li>Architected scalable infrastructure with high availability and resiliency.</li>
-        </ul>
-      </div>
-
-      <div class="job mb-4">
-        <h3>VP Cloud/Systems Architect at JPMorgan Chase &amp; Co. | <span>2021 - 2022</span></h3>
-        <ul>
-          <li>Architected cloud solutions, improving system performance by 25%.</li>
-          <li>Managed multi-million dollar budgets, ensuring optimal resource allocation.</li>
-          <li>Led initiatives in infrastructure automation using Terraform and CloudFormation.</li>
-        </ul>
-      </div>
-
-      <div class="job mb-4">
-        <h3>Head of DevOps &amp; Security at Drest | <span>2019 - 2021</span></h3>
-        <ul>
-          <li>Implemented security protocols, achieving ISO 27001 certification.</li>
-          <li>Streamlined deployment processes, reducing downtime by 40%.</li>
-          <li>Enhanced monitoring and logging systems with ELK Stack and Prometheus.</li>
-        </ul>
-      </div>
-
-      <div class="job mb-4">
-        <h3>Lead DevOps Engineer at Burberry via EPAM Systems | <span>2017 - 2019</span></h3>
-        <ul>
-          <li>Designed and deployed scalable infrastructure supporting global operations.</li>
-          <li>Introduced automation tools, increasing efficiency by 35%.</li>
-          <li>Optimized CDN configurations improving content delivery speeds.</li>
-        </ul>
-      </div>
-
-      <div class="job mb-4">
-        <h3>Senior DevOps Engineer at Thomas Cook via EPAM Systems | <span>2014 - 2017</span></h3>
-        <ul>
-          <li>Led DevOps initiatives enhancing collaboration between development and operations teams.</li>
-          <li>Optimized system monitoring, reducing incident response time by 45%.</li>
-          <li>Implemented infrastructure as code practices using Terraform and Ansible.</li>
-        </ul>
-      </div>
-
-      <div class="job mb-4">
-        <h3>Senior Software Maintenance Engineer at EPAM Systems | <span>2011 - 2014</span></h3>
-        <ul>
-          <li>Maintained critical software systems ensuring 99.9% uptime.</li>
-          <li>Developed automation scripts reducing manual tasks by 60%.</li>
-          <li>Worked extensively with Linux systems and virtualization technologies.</li>
-        </ul>
+    <!-- ═══════════ IMPACT ═══════════ -->
+    <section id="impact">
+      <div class="section-label">Business Impact</div>
+      <div class="section-title">Numbers that matter</div>
+      <div class="section-desc">Measurable outcomes from building platforms that drive revenue, reduce cost, and enable growth.</div>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="impact-number">50%</div>
+          <div class="impact-desc">Infrastructure cost<br>reduction at Lean</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-number">$500K</div>
+          <div class="impact-desc">Saved through<br>re-architecture at DREST</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-number">4×</div>
+          <div class="impact-desc">Team capacity increase<br>via automation</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-number">250+</div>
+          <div class="impact-desc">Clients served<br>incl. Binance, Tabby</div>
+        </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-      <h2>> Testimonials</h2>
-      <blockquote>
-        "Illia is an extraordinary asset for a team. He is beyond dedicated, completely on top of his responsibilities and knows his tech stack to the extreme."
-        <footer>— Lisa Bridgett, CEO at Operational & Investments Boards, Drest</footer>
-      </blockquote>
+    <!-- ═══════════ EXPERIENCE ═══════════ -->
+    <section id="experience">
+      <div class="section-label">Career</div>
+      <div class="section-title">Where I've built</div>
+      <div class="section-desc">A progression from hands-on engineering to strategic leadership across fintech, fashion, banking, and travel.</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2022 — Present</div>
+          <div class="timeline-role">Head of DevOps & SRE</div>
+          <div class="timeline-company">Lean Technologies — London / Dubai / Riyadh</div>
+          <div class="timeline-desc">
+            Leading fintech infrastructure platform in MENA (250+ clients, $2B+ processed). Scaled team from 2→8 across four regions. Achieved SAMA fintech license, DORA Elite metrics, and 99.99% uptime. Architected multi-cloud DR spanning OCI, GCP, and AWS. Report to CPO on infrastructure and reliability strategy.
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">GCP</span>
+            <span class="tag">OCI</span>
+            <span class="tag">SAMA</span>
+            <span class="tag">ArgoCD</span>
+            <span class="tag">Vault</span>
+            <span class="tag">Teleport</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2021 — 2022</div>
+          <div class="timeline-role">VP Cloud / Systems Architect</div>
+          <div class="timeline-company">JPMorgan Chase — London</div>
+          <div class="timeline-desc">
+            Contributed to architecture for a global digital call center platform. Built real-time data integration microservices, WebRTC quality metrics pipelines, and intelligent call routing. Solution presented at AWS re:Invent 2022 as reference architecture.
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">AWS</span>
+            <span class="tag">Python</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">Spinnaker</span>
+            <span class="tag">Kinesis</span>
+            <span class="tag">Terraform</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2019 — 2021</div>
+          <div class="timeline-role">Head of DevOps & Security</div>
+          <div class="timeline-company">DREST — London</div>
+          <div class="timeline-desc">
+            Reported to CEO/CTO. Saved $500K by identifying inefficiencies and leading a full stack migration. Transformed deployments from weekly to multiple per hour. Implemented AWS Well-Architected Framework across all five pillars.
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">AWS</span>
+            <span class="tag">EKS</span>
+            <span class="tag">CircleCI</span>
+            <span class="tag">Neptune</span>
+            <span class="tag">GraphQL</span>
+            <span class="tag">GDPR</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2017 — 2019</div>
+          <div class="timeline-role">Lead DevOps Engineer</div>
+          <div class="timeline-company">Burberry (via EPAM) — London</div>
+          <div class="timeline-desc">
+            Reduced infrastructure costs by 40%. Managed GitLab for 150+ engineers. Led AWS hardening achieving full remediation in 3 weeks vs. 2 months planned. Enterprise-scale ELK, Akamai CDN, and Kubernetes orchestration.
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">AWS</span>
+            <span class="tag">Chef</span>
+            <span class="tag">ELK</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Akamai</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2011 — 2017</div>
+          <div class="timeline-role">Senior DevOps / SRE Engineer</div>
+          <div class="timeline-company">Thomas Cook (via EPAM) — Minsk / London</div>
+          <div class="timeline-desc">
+            Led team of 12 engineers. Migrated EU data centers (400+ instances) with minimal downtime. Deployed monitoring for 500+ instances. Performance testing, database optimization, and automation at enterprise scale.
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">Linux</span>
+            <span class="tag">Puppet</span>
+            <span class="tag">Chef</span>
+            <span class="tag">Oracle</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Zabbix</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-   <!-- Contact Section -->
-<section id="contact" class="my-5">
-  <h2><i class="fas fa-envelope"></i> Contact Me</h2>
-      <p>
-        <a href="https://www.linkedin.com/in/illiash/" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/illia-sh" target="_blank">GitHub</a>
-      </p>
+    <!-- ═══════════ EXPERTISE ═══════════ -->
+    <section id="expertise">
+      <div class="section-label">Core Expertise</div>
+      <div class="section-title">What I bring to the table</div>
+      <div class="section-desc">Deep expertise across the full spectrum of modern infrastructure, security, and engineering leadership.</div>
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <span class="ec-icon">☁️</span>
+          <div class="ec-title">Multi-Cloud Architecture</div>
+          <div class="ec-desc">Designing and operating hybrid infrastructure across AWS, GCP, and OCI with zero-downtime migrations and cross-cloud DR.</div>
+          <div class="ec-tools">
+            <span>AWS</span><span>GCP</span><span>OCI</span><span>Terraform</span><span>CloudFormation</span>
+          </div>
+        </div>
+        <div class="expertise-card">
+          <span class="ec-icon">🔐</span>
+          <div class="ec-title">Security & Compliance</div>
+          <div class="ec-desc">Zero-trust architecture, PAM, regulatory compliance (SAMA, CBUAE, GDPR, CIS, NIST), and security-as-code implementation.</div>
+          <div class="ec-tools">
+            <span>Vault</span><span>Teleport</span><span>Wiz</span><span>Snyk</span><span>SIEM</span><span>EDR</span>
+          </div>
+        </div>
+        <div class="expertise-card">
+          <span class="ec-icon">⎈</span>
+          <div class="ec-title">Kubernetes & Platform</div>
+          <div class="ec-desc">Production Kubernetes across GKE, EKS, OKE. GitOps with ArgoCD, golden paths for developer self-service, and container orchestration at scale.</div>
+          <div class="ec-tools">
+            <span>GKE</span><span>EKS</span><span>OKE</span><span>ArgoCD</span><span>Helm</span><span>Docker</span>
+          </div>
+        </div>
+        <div class="expertise-card">
+          <span class="ec-icon">📊</span>
+          <div class="ec-title">Observability & SRE</div>
+          <div class="ec-desc">Full-stack monitoring, SLO/SLI frameworks, incident management, and on-call processes achieving 99.99% platform uptime.</div>
+          <div class="ec-tools">
+            <span>Prometheus</span><span>Grafana</span><span>ELK</span><span>OpenTelemetry</span><span>APM</span>
+          </div>
+        </div>
+        <div class="expertise-card">
+          <span class="ec-icon">🚀</span>
+          <div class="ec-title">CI/CD & Automation</div>
+          <div class="ec-desc">Engineering pipelines for 100+ microservices. DORA Elite metrics, zero-downtime deployments, and 75% operational toil reduction.</div>
+          <div class="ec-tools">
+            <span>Jenkins</span><span>GitHub Actions</span><span>Spinnaker</span><span>GitOps</span><span>Python</span>
+          </div>
+        </div>
+        <div class="expertise-card">
+          <span class="ec-icon">👥</span>
+          <div class="ec-title">Engineering Leadership</div>
+          <div class="ec-desc">Scaling distributed teams, defining OKRs, 200+ technical interviews, C-suite collaboration, and vendor contract negotiation.</div>
+          <div class="ec-tools">
+            <span>Team Building</span><span>OKR/KPI</span><span>FinOps</span><span>Vendor Mgmt</span>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- ═══════════ CERTIFICATIONS ═══════════ -->
+    <section id="certifications">
+      <div class="section-label">Certifications</div>
+      <div class="section-title">Credentials</div>
+      <div class="cert-row">
+        <div class="cert-badge"><span class="cert-icon">🏅</span> AWS Solutions Architect — Associate</div>
+        <div class="cert-badge"><span class="cert-icon">🏅</span> GCP Professional Cloud Architect</div>
+        <div class="cert-badge"><span class="cert-icon">🏅</span> Google Project Management Professional</div>
+        <div class="cert-badge"><span class="cert-icon">🏅</span> Y Combinator Startup School</div>
+        <div class="cert-badge"><span class="cert-icon">🏅</span> SRE: Measuring & Managing Reliability</div>
+        <div class="cert-badge"><span class="cert-icon">🏅</span> Chef Certified Developer</div>
+        <div class="cert-badge"><span class="cert-icon">🏅</span> ELK Machine Learning</div>
+      </div>
+    </section>
+
+    <!-- ═══════════ PROJECTS ═══════════ -->
+    <section id="projects">
+      <div class="section-label">Side Projects</div>
+      <div class="section-title">Building beyond the day job</div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-label">Marketplace · B2B</div>
+          <div class="project-name">DzeTruck</div>
+          <div class="project-desc">
+            "Uber for Construction" — a B2B logistics marketplace connecting contractors with transport providers. Serverless architecture with Firebase, React, Flutter, and automated CI/CD to App Store and Google Play. Acquired paying B2B clients.
+          </div>
+          <a href="https://landing.dzetruck.com" target="_blank" class="project-link">landing.dzetruck.com →</a>
+        </div>
+        <div class="project-card">
+          <div class="project-label">AI / ML · SaaS</div>
+          <div class="project-name">Menu Scanner</div>
+          <div class="project-desc">
+            AI-powered dietary analysis using Computer Vision and NLP. Serverless on GCP Cloud Run with global edge distribution via Vercel. Built with Next.js and Google Cloud Vision APIs.
+          </div>
+          <a href="https://menu-scanner.com" target="_blank" class="project-link">menu-scanner.com →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ TESTIMONIAL ═══════════ -->
+    <section id="testimonial">
+      <div class="section-label">What People Say</div>
+      <div class="section-title">Testimonial</div>
+      <div class="testimonial-block">
+        <div class="testimonial-text">
+          Illia is an extraordinary asset for a team. He is beyond dedicated, completely on top of his responsibilities and knows his tech stack to the extreme.
+        </div>
+        <div class="testimonial-author">
+          — <strong>Lisa Bridgett</strong>, CEO at Operational & Investments Boards, DREST
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CONTACT ═══════════ -->
+    <section id="contact">
+      <div class="section-label">Get in Touch</div>
+      <div class="section-title">Let's build something</div>
+      <div class="section-desc">Currently open to CTO, VP Engineering, and Head of Platform opportunities. Based in Dubai, operating globally. Reach out via LinkedIn.</div>
+      <div class="contact-grid">
+        <a href="https://www.linkedin.com/in/illiash/" target="_blank" class="contact-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/illia-sh" target="_blank" class="contact-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <div class="site-footer">
+      <p class="footer-text">© 2026 Illia Shpak · Built with purpose</p>
+    </div>
 
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Illia Shpak</p>
-  </footer>
-
-  <!-- Custom JavaScript -->
-  <script src="script.js"></script>
-
   <script>
-  // Fetch visitor data from the ipdata.co API
-  fetch('https://api.ipdata.co?api-key=895eba4616d4a7a64836d007dcd1982884e647f621a5349d506113dd')
-    .then(response => response.json())
-    .then(data => {
-      // Check if the IP address is IPv4 or IPv6
-      const ipAddress = data.ip;
-      const isIPv4 = ipAddress.indexOf(':') === -1;
-
-      if (isIPv4) {
-        // IP address is IPv4
-        document.getElementById('ip-address').textContent = 'IPv4 Address: ' + data.ip;
-      } else {
-        // IP address is IPv6
-        // Attempt to retrieve the IPv4 address
-        fetch('https://api.ipdata.co/ipv4?api-key=895eba4616d4a7a64836d007dcd1982884e647f621a5349d506113dd')
-          .then(response => response.json())
-          .then(ipv4Data => {
-            document.getElementById('ip-address').textContent = 'IPv4 Address: ' + ipv4Data.ip;
-          })
-          .catch(error => {
-            console.error('Error fetching IPv4 address:', error);
-            document.getElementById('ip-address').textContent = 'IPv6 Address: ' + data.ip;
-          });
-      }
-
-      // Display location information
-      document.getElementById('location').textContent = 'Location: ' + data.city + ', ' + data.country_name;
-
-      // Display country flag
-     // Display country flag
-const flagImageUrl = data.flag ? data.flag : data.flag_png;
-if (flagImageUrl) {
-  const flagImg = document.createElement('img');
-  flagImg.src = flagImageUrl;
-  flagImg.alt = data.country_name + ' Flag';
-
-  // Assign a class to the image
-  flagImg.className = 'flag-image';
-
-  // Append the flag image to the page
-  document.getElementById('flag').appendChild(flagImg);
-}
-    })
-    .catch(error => {
-      console.error('Error fetching geolocation data:', error);
-      document.getElementById('ip-address').textContent = 'IP Address: Unavailable';
-      document.getElementById('location').textContent = 'Location: Unavailable';
+    // ── Scroll indicator ──
+    window.addEventListener('scroll', () => {
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = (window.scrollY / docH) * 100;
+      document.getElementById('scrollIndicator').style.width = pct + '%';
     });
-</script>
-  
 
+    // ── Nav scroll effect ──
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ── Mobile menu ──
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // ── Intersection Observer for section reveals ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('section:not(.hero)').forEach(s => observer.observe(s));
+
+    // ── Counter animation ──
+    function animateCounters() {
+      document.querySelectorAll('.metric-value').forEach(el => {
+        const target = parseFloat(el.dataset.count);
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        const isDecimal = el.dataset.decimal === 'true';
+        const duration = 2000;
+        const startTime = performance.now();
+
+        function update(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = eased * target;
+          el.textContent = prefix + (isDecimal ? current.toFixed(2) : Math.floor(current)) + suffix;
+          if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+      });
+    }
+
+    // Trigger counters when hero metrics come into view
+    const metricsObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCounters();
+          metricsObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    const heroMetrics = document.querySelector('.hero-metrics');
+    if (heroMetrics) metricsObs.observe(heroMetrics);
+
+    // ── Terminal typing effect ──
+    (function() {
+      const body = document.getElementById('terminalBody');
+      if (!body) return;
+      const lines = body.children;
+      Array.from(lines).forEach((line, i) => {
+        line.style.opacity = '0';
+        line.style.transform = 'translateY(8px)';
+        line.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      });
+
+      const termObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            Array.from(lines).forEach((line, i) => {
+              setTimeout(() => {
+                line.style.opacity = '1';
+                line.style.transform = 'translateY(0)';
+              }, i * 200);
+            });
+            termObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      termObs.observe(body);
+    })();
+  </script>
 </body>
 </html>
