@@ -12,11 +12,13 @@ Run `python3 -m http.server 8000` from this directory, then open `http://localho
 - `style.css`: responsive layout, contrast, focus styles, and reduced-motion support.
 - `script.js`: progressive mobile navigation and the copyright year.
 - `profile.jpg`: existing portrait.
-- `illia-shpak-cv.pdf`: downloadable CV, compiled from the experience on this page.
+- `illia-shpak-cv.pdf`: two-page CV covering role scope, achievements, technical capabilities, and products built, compiled from the original public page.
 - `social-preview.png` and `social-preview.svg`: sharing card and editable source.
 - `favicon.svg`: browser icon.
 
 The page works without JavaScript, including navigation and all outcome metrics.
+
+After changing CSS or JavaScript, update its version query string in `index.html` so returning visitors load the current asset.
 
 To regenerate the CV, install `reportlab` and `pypdf` in a Python environment and run `python3 scripts/build_cv.py`. This is an optional maintenance command; hosting the site needs no Python dependencies. The social card can be edited in `social-preview.svg` and exported to a 1200 x 630 PNG.
 

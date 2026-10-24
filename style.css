@@ -63,7 +63,7 @@ section { padding: 88px 0; border-bottom: 1px solid var(--border); }
 .portrait-block figcaption { position: relative; color: var(--muted); font: 400 .72rem/1.8 var(--mono); margin-top: 24px; padding-left: 26px; }
 .portrait-marker { position: absolute; left: 0; color: var(--cyan); }
 .hero-metrics { display: grid; grid-template-columns: 1fr 1fr 1.25fr; border-top: 1px solid var(--border); padding-top: 30px; margin-top: 52px; gap: 32px; }
-.hero-metrics > div { display: flex; flex-direction: column-reverse; gap: 7px; }
+.hero-metrics > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 7px; }
 .hero-metrics dt { font: 400 .7rem/1.7 var(--mono); color: var(--dim); }
 .hero-metrics dd { font-size: 2.6rem; line-height: 1.2; font-weight: 600; color: var(--cyan); letter-spacing: -.025em; }
 .hero-metrics .metric-stage { font-size: 2rem; align-content: center; min-height: 50px; }
